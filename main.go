@@ -9,7 +9,7 @@ import (
 
 func main() {
 	rl.SetConfigFlags(rl.FlagWindowResizable)
-	rl.InitWindow(200, 100, "rimer")
+	rl.InitWindow(200, 100, "ray-timer")
 	defer rl.CloseWindow()
 	rl.SetExitKey(rl.KeyNull)
 	rl.SetTargetFPS(30)
