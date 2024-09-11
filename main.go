@@ -11,7 +11,7 @@ func main() {
 	rl.SetConfigFlags(rl.FlagWindowResizable)
 	rl.InitWindow(200, 100, "ray-timer")
 	defer rl.CloseWindow()
-	rl.SetExitKey(rl.KeyNull)
+	rl.SetExitKey(rl.KeyX)
 	rl.SetTargetFPS(30)
 
 	var startTime time.Time
@@ -71,7 +71,7 @@ func main() {
 		fontSize := (screenWidth / 5)
 
 		rl.BeginDrawing()
-		rl.ClearBackground(rl.RayWhite)
+		rl.ClearBackground(rl.Black)
 
 		if isRunning {
 
@@ -83,7 +83,7 @@ func main() {
 			if displayMinutes < 1 && displaySeconds < 15 {
 				timeColor = rl.Red
 			} else {
-				timeColor = rl.Black
+				timeColor = rl.Pink
 			}
 
 			timerText := fmt.Sprintf("%02d:%02d", displayMinutes, displaySeconds)
@@ -93,8 +93,8 @@ func main() {
 			timerText := fmt.Sprintf("Set Timer: %02d:%02d", minutes, seconds)
 			helpText := "Use arrow keys to adjust"
 
-			rl.DrawText(timerText, screenWidth/2-rl.MeasureText(timerText, 20)/2, screenHeight/2, 20, rl.Black)
-			rl.DrawText(helpText, screenWidth/2-rl.MeasureText(helpText, 10)/2, screenHeight/4, 10, rl.Black)
+			rl.DrawText(timerText, screenWidth/2-rl.MeasureText(timerText, 20)/2, screenHeight/2, 20, rl.Pink)
+			rl.DrawText(helpText, screenWidth/2-rl.MeasureText(helpText, 10)/2, screenHeight/4, 10, rl.Pink)
 		}
 		rl.EndDrawing()
 	}
